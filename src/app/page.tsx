@@ -22,7 +22,7 @@ export default function Home() {
   }
 
   return (
-    <main className="w-screen h-screen bg-gray-950 flex justify-center items-center">
+    <main className="w-full h-full bg-gray-950 flex justify-center items-center">
       <form
         className="bg-gray-800 w-96 p-6 rounded-lg"
         onSubmit={handleFormSubimit}
