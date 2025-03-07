@@ -10,13 +10,6 @@ Teste para empresa WideLabs.
 
 ## 🚀 Como executar
 
-Clone o projeto e acesse a pasta do mesmo.
-
-```bash
-$ git clone https://github.com/ViniciusBussolo1/teste-widelabs.git
-$ cd teste-widelabs
-```
-
 Para iniciá-lo, siga os passos abaixo:
 
 ```bash
