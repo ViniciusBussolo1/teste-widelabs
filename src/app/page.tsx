@@ -11,6 +11,8 @@ export default function Home() {
   function handleFormSubimit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
 
+    console.log(nome);
+
     if (nome.trim() === "") {
       alert("Digite um nome");
       return;
