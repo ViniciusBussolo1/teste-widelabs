@@ -23,7 +23,7 @@ export default function Home() {
           onChange={(event) => setNome(event.target.value)}
           placeholder="Digite seu nome"
         />
-        <Button type="submit" content="Ver Cartas" />
+        <Button type="submit" content="Ver Cartas" className="w-full" />
       </Form>
     </main>
   );
