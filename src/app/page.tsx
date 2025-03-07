@@ -1,51 +1,30 @@
 "use client";
 
-import { useRouter } from "next/navigation";
-import { FormEvent, useState } from "react";
+import { useState } from "react";
+
+import { Button } from "@/components/button/button";
+import { useForm } from "@/hooks/useForm/useForm";
+
+import Form from "@/components/form/form";
+import Input from "@/components/input/input";
 
 export default function Home() {
-  const router = useRouter();
-
   const [nome, setNome] = useState("");
 
-  function handleFormSubimit(event: FormEvent<HTMLFormElement>) {
-    event.preventDefault();
-
-    console.log(nome);
-
-    if (nome.trim() === "") {
-      alert("Digite um nome");
-      return;
-    }
-
-    localStorage.setItem("nome", nome);
-
-    router.push("/cartas");
-  }
+  const { handleFormSubmit } = useForm();
 
   return (
     <main className="w-full h-full bg-gray-950 flex justify-center items-center">
-      <form
-        className="bg-gray-800 w-96 p-6 rounded-lg"
-        onSubmit={handleFormSubimit}
-      >
-        <input
+      <Form onSubmit={(event) => handleFormSubmit(event, nome)}>
+        <Input
           type="text"
           name="nome"
           value={nome}
           onChange={(event) => setNome(event.target.value)}
           placeholder="Digite seu nome"
-          className="w-full p-2 mb-4 text-white placeholder-gray-500 rounded-md 
-          focus:outline-none focus:ring-2 focus:ring-blue-500"
         />
-
-        <button
-          type="submit"
-          className="w-full p-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 cursor-pointer"
-        >
-          Ver Cartas
-        </button>
-      </form>
+        <Button type="submit" content="Ver Cartas" />
+      </Form>
     </main>
   );
 }
